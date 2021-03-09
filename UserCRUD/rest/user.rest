@@ -1,0 +1,43 @@
+### Get all resources
+GET http://localhost:8080/users
+
+### Create user - Rosa Diaz
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "userName": "rosaDiaz",
+    "emailAddress": "rosa.diaz@gmail.com",
+    "firstName": "Rosa",
+    "lastName": "Diaz"
+}
+
+### Create user - Jake Peralta
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "userName": "jake.peralta",
+    "emailAddress": "jake.peralta@yahoo.com",
+    "firstName": "Jake",
+    "lastName": "Peralta"
+}
+
+### Get resource by username
+GET http://localhost:8080/users/user/rosaDiaz
+
+### Get resource by email
+GET http://localhost:8080/users/user/email/jake.peralta@yahoo.com
+
+### Update user
+PUT http://localhost:8080/users/user/rosaDiaz
+Content-Type: application/json
+
+{
+    "emailAddress": "amy.santiago@hotmail.com",
+    "firstName": "Amy",
+    "lastName": "Santiago"
+}
+
+### Delete user
+DELETE http://localhost:8080/users/user/jake.peralta

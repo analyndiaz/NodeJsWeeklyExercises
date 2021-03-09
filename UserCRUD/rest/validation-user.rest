@@ -1,0 +1,82 @@
+### Get non-existing resource by username
+GET http://localhost:8080/users/user/charlesBoyle
+
+### Get non-existing resource by email
+GET http://localhost:8080/users/user/email/charlesBoyle01@yahoo.com
+
+### Create user with invalid userName
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "emailAddress": "charlesBoyle01@yahoo.com",
+    "firstName": "Charles",
+    "lastName": "Boyle"
+}
+
+### Create user with invalid userName
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "userName": "",
+    "emailAddress": "charlesBoyle01@yahoo.com",
+    "firstName": "Charles",
+    "lastName": "Boyle"
+}
+
+### Create user with invalid email
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "userName": "charlesBoyle",
+    "emailAddress": "charlesBoyle01yahoo.com",
+    "firstName": "Charles",
+    "lastName": "Boyle"
+}
+
+### Create already existing user - Rosa Diaz
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "userName": "rosaDiaz",
+    "emailAddress": "rosa.diaz@gmail.com",
+    "firstName": "Rosa",
+    "lastName": "Diaz"
+}
+
+### Update non-existing user
+PUT http://localhost:8080/users/user/amy.Santiago
+Content-Type: application/json
+
+{
+    "emailAddress": "amy.santiago@hotmail.com",
+    "firstName": "Amy",
+    "lastName": "Santiago"
+}
+
+### Update with invalid email
+PUT http://localhost:8080/users/user/rosaDiaz
+Content-Type: application/json
+
+{
+    "emailAddress": "amy.santiagohotmail.com",
+    "firstName": "Amy",
+    "lastName": "Santiago"
+}
+
+### Update with existing userName
+PUT http://localhost:8080/users/user/rosaDiaz
+Content-Type: application/json
+
+{
+    "userName": "jake.peralta",
+    "emailAddress": "amy.santiago@hotmail.com",
+    "firstName": "Raymond",
+    "lastName": "Holt"
+}
+
+### Delete user
+DELETE http://localhost:8080/users/user/raymond.holt01
